@@ -1,5 +1,7 @@
+var defaultTemp = 20
+
 function Thermostat() {
-	this.temperature = 20;
+	this.temperature = defaultTemp;
 	this.isPowerSaveOn = true;
 };
 
@@ -26,4 +28,8 @@ Thermostat.prototype.turnPowerSaveOff = function() {
 
 Thermostat.prototype.turnPowerSaveOn = function() {
 	this.isPowerSaveOn = true;
+};
+
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = defaultTemp;
 };

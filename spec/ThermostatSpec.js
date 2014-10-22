@@ -53,7 +53,11 @@ describe('Thermostat', function() {
 			expect(thermostat.isPowerSaveOn).toBe(true)
 		});
 
-		
+		it('should allow the temperature to be reset to 20 degrees', function() {
+			thermostat.increaseTemperature(8);
+			thermostat.resetTemperature();
+			expect(thermostat.temperature).toEqual(20);
+		});
 
 	});
 
