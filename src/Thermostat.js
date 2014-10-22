@@ -3,23 +3,25 @@ function Thermostat() {
 	this.minTemperature = 10;
 	this.temperature = this.defaultTemperature;
 	this.isPowerSaveOn = true;
+	this.maxPowerSaveTemperature = 25;
 };
 
 Thermostat.prototype.increaseTemperature = function() {
-	this.increaseTemperatureBy(1);
+	return this.increaseTemperatureBy(1);
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-	this.temperature += degrees
+	if(this.isPowerSaveOn && this.temperature + degrees > 25) return this.temperature = 25;
+	return this.temperature += degrees;
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-	this.decreaseTemperatureBy(1);
+	return this.decreaseTemperatureBy(1);
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	if(this.temperature - degrees < this.minTemperature) this.temperature = this.minTemperature
-	else this.temperature -= degrees;
+	if(this.temperature - degrees < this.minTemperature) return this.temperature = this.minTemperature
+	return this.temperature -= degrees;
 };
 
 Thermostat.prototype.turnPowerSaveOff = function() {
