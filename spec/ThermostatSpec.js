@@ -28,6 +28,8 @@ describe('Thermostat', function() {
 			expect(thermostat.temperature).toEqual(19);
 		});
 
+	});
+
 	describe('has custom options that', function() {
 
 		it('should be able to increase the temperature by 12', function() {
@@ -51,12 +53,16 @@ describe('Thermostat', function() {
 			expect(thermostat.isPowerSaveOn).toBe(true)
 		});
 
-		it('', function() {
-			
-		});
+		
 
 	});
 
+	describe('has restrictions that', function() {
+
+		it('should not allow the temperature to drop below 10 degrees', function() {
+			thermostat.decreaseTemperatureBy(12);
+			expect(thermostat.temperature).toEqual(10);
+		});
 	});
 
 });

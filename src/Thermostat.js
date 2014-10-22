@@ -16,7 +16,8 @@ Thermostat.prototype.decreaseTemperature = function() {
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	this.temperature -= degrees;
+	if(this.temperature - degrees < 10) this.temperature = 10
+	else this.temperature -= degrees;
 };
 
 Thermostat.prototype.turnPowerSaveOff = function() {
