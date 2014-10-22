@@ -1,7 +1,7 @@
-var defaultTemp = 20
-
 function Thermostat() {
-	this.temperature = defaultTemp;
+	this.defaultTemperature = 20;
+	this.minTemperature = 10;
+	this.temperature = this.defaultTemperature;
 	this.isPowerSaveOn = true;
 };
 
@@ -18,7 +18,7 @@ Thermostat.prototype.decreaseTemperature = function() {
 };
 
 Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
-	if(this.temperature - degrees < 10) this.temperature = 10
+	if(this.temperature - degrees < this.minTemperature) this.temperature = this.minTemperature
 	else this.temperature -= degrees;
 };
 
@@ -31,5 +31,5 @@ Thermostat.prototype.turnPowerSaveOn = function() {
 };
 
 Thermostat.prototype.resetTemperature = function() {
-	this.temperature = defaultTemp;
+	this.temperature = this.defaultTemperature;
 };
