@@ -1,9 +1,10 @@
 function Thermostat() {
 	this.defaultTemperature = 20;
 	this.minTemperature = 10;
+	this.maxPowerSaveTemperature = 25;
+	this.maxTemperature = 32
 	this.temperature = this.defaultTemperature;
 	this.isPowerSaveOn = true;
-	this.maxPowerSaveTemperature = 25;
 };
 
 Thermostat.prototype.increaseTemperature = function() {
@@ -11,7 +12,8 @@ Thermostat.prototype.increaseTemperature = function() {
 };
 
 Thermostat.prototype.increaseTemperatureBy = function(degrees) {
-	if(this.isPowerSaveOn && this.temperature + degrees > 25) return this.temperature = 25;
+	if(this._isAboveMaxPowerSaveTemperature(degrees)) return this.temperature = this.maxPowerSaveTemperature;
+	if(this._isAboveMaxTemperature(degrees)) return this.temperature = this.maxTemperature;
 	return this.temperature += degrees;
 };
 
@@ -34,4 +36,12 @@ Thermostat.prototype.turnPowerSaveOn = function() {
 
 Thermostat.prototype.resetTemperature = function() {
 	this.temperature = this.defaultTemperature;
+};
+
+Thermostat.prototype._isAboveMaxPowerSaveTemperature = function(degrees) {
+	return this.isPowerSaveOn && this.temperature + degrees > this.maxPowerSaveTemperature;
+};
+
+Thermostat.prototype._isAboveMaxTemperature = function(degrees) {
+	return this.temperature + degrees > this.maxTemperature;
 };

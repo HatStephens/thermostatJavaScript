@@ -71,6 +71,11 @@ describe('Thermostat', function() {
 		it('should not go above 25 degrees when Power Save is on', function() {
 			expect(thermostat.increaseTemperatureBy(6)).toEqual(25);
 		});
+
+		it('should not go above 32 degrees when Power Save is off', function() {
+			thermostat.turnPowerSaveOff();
+			expect(thermostat.increaseTemperatureBy(13)).toEqual(32);
+		});
 	});
 
 });

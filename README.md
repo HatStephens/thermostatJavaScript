@@ -11,8 +11,8 @@ Back-end Checklist
 - [x] The minimum temperature is 10 degrees
 - [x] There is a power saving mode
 - [x] Power saving mode is on by default
-- [ ] If power saving mode is on, the maximum temperature is 25 degrees
-- [ ] If power saving mode is off, the maximum temperature is 32 degrees
+- [x] If power saving mode is on, the maximum temperature is 25 degrees
+- [x] If power saving mode is off, the maximum temperature is 32 degrees
 - [x] You can reset the temperature to 20 by hitting  the reset button
 
 Front-end Checklist
