@@ -14,7 +14,7 @@ describe('Thermostat', function() {
 			expect(thermostat.temperature).toEqual(20);
 		});
 
-		it('power saving mode(TM) should be on', function() {
+		it('Power Save should be on', function() {
 			expect(thermostat.isPowerSaveOn).toBe(true);
 		});
 
@@ -35,7 +35,15 @@ describe('Thermostat', function() {
 			expect(thermostat.temperature).toEqual(32);
 		});
 
-		
+		it('should be able to decrease the temperature by 7', function() {
+			thermostat.decreaseTemperatureBy(7);
+			expect(thermostat.temperature).toEqual(13);
+		});
+
+		it('should be able to turn Power Save off', function() {
+			thermostat.turnPowerSaveOff();
+			expect(thermostat.isPowerSaveOn).toBe(false)
+		});
 
 	});
 

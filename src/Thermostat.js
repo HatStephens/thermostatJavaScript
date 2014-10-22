@@ -12,5 +12,13 @@ Thermostat.prototype.increaseTemperatureBy = function(degrees) {
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-	this.temperature -= 1;
+	this.decreaseTemperatureBy(1);
+};
+
+Thermostat.prototype.decreaseTemperatureBy = function(degrees) {
+	this.temperature -= degrees;
+};
+
+Thermostat.prototype.turnPowerSaveOff = function() {
+	this.isPowerSaveOn = false;
 };
