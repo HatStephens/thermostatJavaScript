@@ -6,8 +6,8 @@ Thermostat
 Back-end Checklist
 
 - [x] Thermostat starts at 20 degrees
-- [x] You can increase the temp with the up button
-- [x] You can decrease the temp with the down button
+- [x] You can increase the temp (with the up button)
+- [x] You can decrease the temp (with the down button)
 - [x] The minimum temperature is 10 degrees
 - [x] There is a power saving mode
 - [x] Power saving mode is on by default
