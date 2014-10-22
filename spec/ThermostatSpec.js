@@ -45,6 +45,16 @@ describe('Thermostat', function() {
 			expect(thermostat.isPowerSaveOn).toBe(false)
 		});
 
+		it('should be able to turn Power Save on', function() {
+			thermostat.turnPowerSaveOff();
+			thermostat.turnPowerSaveOn();
+			expect(thermostat.isPowerSaveOn).toBe(true)
+		});
+
+		it('', function() {
+			
+		});
+
 	});
 
 	});
