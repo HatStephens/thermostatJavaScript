@@ -3,16 +3,25 @@
 <html>
 
 <head>
-<link text='text/css' rel='stylesheet' href='css/reset.css' />
-<link type='text/css' rel='stylesheet' href='css/stylesheet.css'/>
+<link type='text/css' rel='stylesheet' href='./public/css/reset.css' />
+<link type='text/css' rel='stylesheet' href='./public/css/stylesheet.css'/>
 </head>
 
-<body>
-
-
-<script src='src/jQuery-2.1.1.js'></script>
-<script src='src/Thermostat.js'></script>
-<script src='src/Interface.js'></script>
+<body class='bgColor'>
+<section>
+	<h1>Temp here</h1>
+	<br/>
+	<ul>
+		<li><a href='#' id='increaseTemp'>+</a></li>
+		<li><a href='#' id='decreaseTemp'>-</a></li>
+		<li><a href='#' id='resetTemperature'>Reset</a></li>
+		<li><a href='#' id='turnPowerSaveOn'>Turn Power Save On</a></li>
+		<li><a href='#' id='turnPowerSaveOff'>Turn Power Save Off</a></li>
+	</ul>
+</section>
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script type='text/javascript' src='src/Thermostat.js'></script>
+<script type='text/javascript' src='src/Interface.js'></script>
 </body>
 
 </html>
